@@ -1,0 +1,86 @@
+.navigation {
+  display: block;
+}
+
+.navigation__toggle {
+  display: block;
+  position: relative;
+  width: 50px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 10;
+
+  @media (min-width: $desktop) {
+    display: none;
+  }
+}
+
+.navigation__toggle--active {
+  right: -11px;
+}
+
+.navigation__toggle span {
+  position: absolute;
+  background-color: $menu-color;
+  width: 50px;
+  height: 3px;
+  top: 10px;
+  border-radius: 1px;
+  transition: all 0.4s ease 0s;
+
+  &:active {
+    background-color: hsl(344, 68%, 49%, 0.3);
+  }
+}
+
+.navigation__toggle:hover > span {
+  background-color: $menu-color-active;
+}
+
+.navigation__toggle::before,
+.navigation__toggle::after {
+  content: "";
+  background-color: $menu-color;
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  left: 0;
+  border-radius: 1px;
+  transition: all 0.4s ease 0s;
+}
+
+.navigation__toggle:hover::before,
+.navigation__toggle:hover::after {
+  background-color: $menu-color-active;
+}
+
+.navigation__toggle:active::before,
+.navigation__toggle:active::after {
+  background-color: hsl(344, 68%, 49%, 0.3);
+}
+
+.navigation__toggle::before {
+  top: 0;
+}
+
+.navigation__toggle::after {
+  bottom: 0;
+}
+
+.navigation__toggle.navigation__toggle--active::before {
+  transform: rotate(45deg);
+  top: 10px;
+  left: 13px;
+  width: 25px;
+}
+
+.navigation__toggle.navigation__toggle--active::after {
+  transform: rotate(-45deg);
+  bottom: 10px;
+  left: 13px;
+  width: 25px;
+}
+
+.navigation__toggle.navigation__toggle--active span {
+  transform: scale(0);
+}

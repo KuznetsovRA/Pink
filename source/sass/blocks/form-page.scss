@@ -1,0 +1,64 @@
+.form-page {
+  font-family: $ff;
+
+  @media (min-width: $tablet) {
+    top: -110px;
+  }
+
+  @media (min-width: $desktop) {
+    top: 0;
+  }
+}
+
+.form-page__top {
+  background-image: url("../img/back-mobile.jpg");
+  background-color: $slider-color;
+  background-repeat: no-repeat;
+  background-position: top;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/back-mobile-2x.jpg");
+    background-size: 100% auto;
+  }
+  width: 100%;
+  height: 237px;
+
+  @media (min-width: $tablet) {
+    background-image: url("../img/back-tablet.jpg");
+    height: 440px;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/back-tablet-2x.jpg");
+    }
+  }
+
+  @media (min-width: $desktop) {
+    background-image: url("../img/back-desktop.jpg");
+    height: 394px;
+    background-size: cover;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/back-desktop-2x.jpg");
+    }
+  }
+}
+
+.form-page__description {
+  @include font-options(24px, 32px, lighter, $menu-color);
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 96px 46px 51px 46px;
+
+  @media (min-width: $tablet) {
+    @include font-options(50px, 68px, lighter, $menu-color);
+    padding: 177px 40px 74px 40px;
+  }
+
+  @media (min-width: $desktop) {
+    @include font-options(50px, 68px, lighter, $menu-color);
+    max-width: 830px;
+    margin: 0 auto;
+    padding-top: 170px;
+  }
+}

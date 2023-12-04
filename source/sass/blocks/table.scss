@@ -1,0 +1,164 @@
+.table {
+  border-collapse: collapse;
+  background-color: $tabel-back;
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.table th {
+  width: 276px;
+  height: 96px;
+  background-color: $slider-color;
+  border-left: 2px solid $input-color;
+  border-right: 2px solid $input-color;
+  background-clip: padding-box;
+
+  @media (min-width: $tablet) {
+    height: 75px;
+    width: 156px;
+    border-left: 2px solid transparent;
+  }
+
+  @media (min-width: $desktop) {
+    height: 94px;
+    width: 233px;
+  }
+}
+
+.table__label {
+  @include font-options(16px, 30px, bold, $menu-color);
+  text-transform: uppercase;
+
+  @media (min-width: $desktop) {
+    font-size: 18px;
+  }
+}
+
+.table__label span {
+  @include font-options(18px, 30px, lighter, $menu-color);
+  display: block;
+  margin-bottom: 19px;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $desktop) {
+    font-size: 24px;
+  }
+}
+
+.table__options span {
+  @include font-options(14px, 30px, 400, $slider-color);
+  text-transform: uppercase;
+  padding-bottom: 3px;
+}
+
+.table td {
+  height: 57px;
+  background-color: $menu-color;
+  border-left: 2px solid $input-color;
+  border-right: 2px solid $input-color;
+  border-bottom: 2px solid $input-color;
+  background-clip: padding-box;
+
+  @media (min-width: $tablet) {
+    border-left: 2px solid $input-color;
+    height: 43px;
+  }
+
+  @media (min-width: $desktop) {
+    height: 58px;
+  }
+}
+
+.table__item:first-child {
+  @include font-options(14px, 30px, normal, $slider-color);
+  text-transform: uppercase;
+  padding-left: 20px;
+
+  @media (min-width: $tablet) {
+    text-transform: none;
+    box-sizing: border-box;
+    padding-right: 10px;
+  }
+
+  @media (min-width: $desktop) {
+    font-size: 18px;
+    width: 234px;
+  }
+}
+
+.table__item:not(:first-child) {
+  @media (min-width: $tablet) {
+    text-align: center;
+  }
+}
+
+.table__item {
+  position: relative;
+}
+
+.table__item--best span:first-of-type {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 74px;
+  height: 74px;
+  overflow: hidden;
+
+  @media (min-width: $tablet) {
+    width: 61px;
+    height: 61px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 74px;
+    height: 74px;
+  }
+}
+
+.table__item--best span:first-of-type::before {
+  content: "Хит";
+  position: absolute;
+  width: 150%;
+  height: 23px;
+  background-color: $menu-color-active;
+  top: calc((100% - 42px) / 2);
+  left: -26px;
+  transform: rotate(-45deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include font-options(14px, 30px, 400, $menu-color);
+
+  @media (min-width: $tablet) {
+    height: 19px;
+  }
+
+  @media (min-width: $desktop) {
+    height: 23px;
+  }
+}
+
+th:first-child {
+  background-color: $tabel-back;
+
+  @media (min-width: $tablet) {
+    border-right: 2px solid transparent;
+  }
+}
+
+th:nth-child(2) {
+  @media (min-width: $tablet) {
+    border-radius: 1px 0 0 0;
+    overflow: hidden;
+  }
+}
+
+.table__options-color > .table__item:first-child {
+  @media (min-width: $tablet) {
+    border-top: 2px solid $input-color;
+  }
+}

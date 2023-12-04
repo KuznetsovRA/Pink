@@ -1,0 +1,26 @@
+.copyright__text {
+  @include mobile-text;
+  line-height: 18px;
+  padding-right: 18px;
+
+  @media (min-width: $tablet) {
+    padding-bottom: 6px;
+  }
+
+  @media (min-width: $desktop) {
+    font-size: 18px;
+    padding-bottom: 6px;
+  }
+}
+
+.copyright__svg {
+  fill: $menu-color-active;
+
+  &:hover {
+    fill: $slider-color;
+  }
+
+  &:active {
+    fill: hsl(211, 27%, 21%, 0.3);
+  }
+}

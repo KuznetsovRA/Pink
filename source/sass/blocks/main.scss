@@ -1,0 +1,36 @@
+.main {
+  font-family: $ff;
+}
+
+.main__download-app {
+  box-sizing: border-box;
+
+  @media (min-width: $tablet) {
+    padding-left: 20px;
+  }
+
+  @media (min-width: $desktop) {
+    padding-left: 0;
+  }
+}
+
+.main__advantages {
+  box-sizing: border-box;
+}
+
+.main__research {
+  box-sizing: border-box;
+}
+
+.main__reviews {
+  box-sizing: border-box;
+}
+
+.main__rate {
+  box-sizing: border-box;
+  padding: 100px 0;
+}
+
+.main__feedback {
+  box-sizing: border-box;
+}

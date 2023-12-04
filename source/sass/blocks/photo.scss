@@ -1,0 +1,285 @@
+.photo {
+  min-height: 301px;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template: minmax(180px, 1fr) auto auto auto / 1fr;
+  position: relative;
+
+  @media (min-width: $tablet) {
+    min-height: 455px;
+    grid-template: 300px auto minmax(40px, 1fr) auto / 1fr;
+    align-self: stretch;
+  }
+
+  @media (min-width: $desktop) {
+    min-height: 555px;
+    grid-template: 400px auto minmax(40px, 1fr) auto / 1fr;
+  }
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  grid-area: "photo";
+  grid-row-start: 1;
+  grid-row-end: 2;
+
+  @media (min-width: $tablet) {
+    height: 300px;
+  }
+
+  @media (min-width: $desktop) {
+    height: 400px;
+  }
+}
+
+.photo__author {
+  @include mobile-text;
+  margin: 0;
+  padding-left: 17px;
+  padding-top: 18px;
+  font-weight: 700;
+  grid-area: "author";
+  grid-row-start: 2;
+  grid-row-end: 3;
+
+  @media (min-width: $tablet) {
+    padding-top: 23px;
+    padding-left: 30px;
+  }
+
+  @media (min-width: $desktop) {
+    padding-top: 24px;
+    padding-left: 27px;
+  }
+}
+
+.photo__posting-time {
+  @include font-options(12px, 24px, lighter, $slider-color);
+  text-transform: uppercase;
+}
+
+.photo__comment {
+  @include mobile-text;
+  margin: 0;
+  grid-area: "comment";
+  grid-row-start: 3;
+  grid-row-end: 4;
+  padding-right: 40px;
+  padding-left: 17px;
+
+  @media (min-width: $tablet) {
+    padding-left: 30px;
+  }
+
+  @media (min-width: $desktop) {
+    padding-left: 27px;
+  }
+}
+
+.photo__like {
+  @include font-options(12px, 24px, 400, $menu-color-active);
+  text-transform: uppercase;
+  margin: 0;
+  grid-area: "like";
+  grid-row-start: 4;
+  grid-row-end: 5;
+  position: relative;
+  padding: 10px 0 18px 48px;
+
+  @media (min-width: $tablet) {
+    padding: 12px 0 23px 30px;
+  }
+
+  @media (min-width: $desktop) {
+    padding-left: 27px;
+  }
+}
+
+.photo__button {
+  padding: 0;
+  border: none;
+  color: transparent;
+  cursor: pointer;
+}
+
+.photo__button.photo__button--like {
+  color: $menu-color-active;
+}
+
+.photo__like-svg {
+  position: absolute;
+  top: 15px;
+  left: calc(100% - 263px);
+  color: inherit;
+  stroke: $menu-color-active;
+  stroke-width: 0.1rem;
+
+  @media (min-width: $tablet) {
+    top: 17px;
+    left: calc(100% - 43px);
+  }
+
+  //&:hover {
+  //  color: $menu-color-active;
+  //}
+}
+
+.photo__label {
+  @include font-options(12px, 24px, 700, $menu-color);
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 6px;
+  width: 140px;
+  height: 30px;
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  display: block;
+  background-color: $menu-color-active;
+  z-index: 3;
+
+  @media (min-width: $tablet) {
+    top: 45px;
+  }
+
+  @media (min-width: $desktop) {
+    top: 42px;
+    right: 130px;
+  }
+}
+
+.photo--panorama {
+  grid-template: minmax(137px, 1fr) auto auto auto / 1fr;
+  align-self: center;
+
+  @media (min-width: $tablet) {
+    grid-template: 509px auto 1fr / 1fr 1fr;
+  }
+
+  @media (min-width: $desktop) {
+    min-height: 602px;
+    grid-template: 506px auto minmax(40px, 1fr) / 1fr 1fr;
+  }
+}
+
+.photo--panorama img {
+  @media (min-width: $tablet) {
+    height: 509px;
+  }
+
+  @media (min-width: $desktop) {
+    height: 506px;
+  }
+}
+
+.photo--panorama > .photo__author {
+  padding-left: 37px;
+  padding-top: 18px;
+
+  @media (min-width: $tablet) {
+    margin: 0;
+    padding-top: 23px;
+    padding-left: 50px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  @media (min-width: $desktop) {
+    padding-top: 24px;
+    padding-left: 157px;
+  }
+}
+
+.photo--panorama > .photo__comment {
+  padding-left: 37px;
+
+
+  @media (min-width: $tablet) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    padding-left: 50px;
+    padding-bottom: 54px;
+    max-width: 500px;
+  }
+
+  @media (min-width: $desktop) {
+    max-width: 874px;
+    padding-left: 157px;
+    padding-bottom: 53px;
+  }
+}
+
+.photo--panorama > .photo__comment::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 137px;
+  left: calc(50% - 140px);
+  display: block;
+  background-color: $tabel-back;
+  min-width: 280px;
+  min-height: 192px;
+
+  @media (min-width: $tablet) {
+    width: 620px;
+    min-height: 121px;
+    top: 509px;
+    left: calc(50% - 310px);
+  }
+
+  @media (min-width: $desktop) {
+    width: 940px;
+    min-height: 96px;
+    top: 506px;
+    left: calc(50% - 470px);
+  }
+}
+
+.photo--panorama > .photo__like {
+  position: relative;
+  padding-left: 68px;
+  padding-top: 11px;
+  padding-bottom: 18px;
+
+  @media (min-width: $tablet) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    justify-self: end;
+    padding-top: 25px;
+    padding-right: 82px;
+    padding-bottom: 0;
+  }
+
+  @media (min-width: $desktop) {
+    padding-top: 25px;
+    padding-bottom: 0;
+    padding-right: 193px;
+  }
+}
+
+.photo--panorama svg {
+  position: absolute;
+  top: 15px;
+  left: 37px;
+
+  @media (min-width: $tablet) {
+    top: 30px;
+    left: 173px;
+  }
+
+  @media (min-width: $desktop) {
+    top: 30px;
+    left: 173px;
+  }
+}

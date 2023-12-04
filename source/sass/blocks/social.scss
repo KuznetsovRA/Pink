@@ -1,0 +1,46 @@
+.social__list {
+  margin: 0;
+  padding: 0;
+  height: 54px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+
+  @media (min-width: $tablet) {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    padding-right: 19px;
+  }
+
+  @media (min-width: $desktop) {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    padding-right: 0;
+  }
+}
+
+.social__item {
+  align-self: center;
+}
+
+.social__item:nth-child(2) {
+  padding: 0 9px;
+}
+
+
+.social__icon {
+  fill: $menu-color-active;
+  color: hsl(211, 27%, 21%, 0.1);
+
+  &:hover {
+    fill: $menu-color-active;
+    color: $slider-color;
+  }
+
+  &:active {
+    fill: hsl(344, 68%, 49%, 0.3);
+    color: hsl(211, 27%, 21%, 0.1);
+  }
+}

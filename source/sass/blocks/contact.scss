@@ -1,0 +1,158 @@
+.contact {
+  position: relative;
+}
+
+.contact__list {
+  max-width: 950px;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  background-color: $menu-color;
+  display: grid;
+  grid-template: auto auto auto / 1fr;
+  row-gap: 19px;
+
+  @media (min-width: $tablet) {
+    grid-template: auto auto / 1fr 1fr;
+    grid-template-areas: "phone mail" "address address";
+    justify-content: center;
+    row-gap: 42px;
+    margin: auto;
+  }
+
+  @media (min-width: $desktop) {
+    grid-template: auto / 1fr 1fr 1fr;
+    grid-template-areas: "phone address mail";
+    margin: 20px auto;
+  }
+}
+
+.contact__title {
+  @include font-options(18px, 25px, 700, $slider-color);
+  margin: 0 0 0;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 3px;
+  }
+
+  @media (min-width: $desktop) {
+    margin: 0 0 20px 0;
+  }
+}
+
+.contact__link {
+  @include font-options(24px, 33px, lighter, $menu-color-active);
+  text-decoration: none;
+}
+
+.contact__link:hover {
+  color: $slider-color;
+  position: relative;
+}
+
+.contact__item:not(:last-child) > .contact__link:hover::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  background: hsl(0, 0%, 0%);
+  height: 1px;
+}
+
+.contact__link:active {
+  @include font-options(24px, 32px, lighter, hsl(211, 27%, 21%, 0.3));
+}
+
+.contact__map {
+  position: relative;
+  margin-top: 34px;
+
+  @media (min-width: $tablet) {
+    margin-top: 26px;
+  }
+
+  @media (min-width: $desktop) {
+    margin-top: 10px;
+  }
+}
+
+.contact__map::before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  background-color: $menu-color;
+  height: 33px;
+  left: 0;
+  top: -1px;
+  clip-path: polygon(100% 0, 50% 100%, 0 0);
+
+  @media (min-width: $tablet) {
+    height: 68px;
+  }
+
+  @media (min-width: $desktop) {
+    height: 103px;
+  }
+}
+
+.contact__map::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  bottom: 69px;
+  left: calc(50% - 18px);
+  display: block;
+  border-radius: 50%;
+  border: 10px solid $menu-color;
+  background-color: $menu-color-active;
+
+  @media (min-width: $tablet) {
+    bottom: 144px;
+  }
+
+  @media (min-width: $desktop) {
+    bottom: 202px;
+  }
+}
+
+.contact__googlemap {
+  width: 100%;
+  border: none;
+  display: block;
+
+  @media (min-width: $tablet) {
+    min-height: 374px;
+  }
+
+  @media (min-width: $desktop) {
+    min-height: 502px;
+  }
+}
+
+.contact__picturemap {
+  display: none;
+}
+
+.contact__item-phone {
+  @media (min-width: $tablet) {
+    grid-area: phone;
+  }
+}
+
+.contact__item-mail {
+  @media (min-width: $tablet) {
+    grid-area: mail;
+  }
+}
+
+.contact__item-address {
+  @media (min-width: $tablet) {
+    grid-area: address;
+  }
+}
